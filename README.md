@@ -11,7 +11,7 @@ GEE(Generalized Estimating Equations)를 병행하는 것이 권장된다.
 (1:1 Matching에서 GEE 병행은 필수에 가깝고, 1:n matching에서도 권장. IPTW는 불필요)  
 
 ---
-### Propensity Score Matching
+### Propensity Score Weighting
 
 🧠 IPTW를 수행할 경우, 극단적 가중치는 잘라내거나 다듬어 분석 결과의 왜곡을 막을 필요가 있다.  
 극단적 가중치는 전체 추정값을 소수의 샘플에 의존하게 만들고, 표준 오차를 폭발적으로 키운다.  
