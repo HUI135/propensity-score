@@ -1,6 +1,12 @@
 # propensity-score
 propensity score matching/weighting 수행 시 주의사항
 
+iptw
+→ 전체 인구를 가상의 무작위 실험 환경처럼 만들어서
+   “모든 사람이 대사질환이 있다고 가정하면” vs “없다고 가정하면”
+   위염 발생률이 얼마나 차이날까? 를 보는 것
+ = 전체 모집단 평균 효과 (marginal ATE)
+
 ---
 ### Propensity Score Matching
 
