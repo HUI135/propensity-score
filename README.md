@@ -1,5 +1,5 @@
 # propensity-score
-propensity score matching/weighting에 대한 고찰
+propensity score matching/weighting 수행 시 주의사항
 
 ---
 ### Propensity Score Matching
