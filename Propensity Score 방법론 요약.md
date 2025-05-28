@@ -80,11 +80,29 @@
 
 ### 🚧 잘못된 해석 방지를 위한 주의사항
 
-- PS 자체는 **confounding을 제거하지 않음**  
-  → 보정 도구일 뿐이며, **balance 진단 필수** (예: SMD plot, PS overlap plot)
-- Trimming, caliper, matching ratio, stabilized weight 등의 **세부 설정은 결과 해석에 영향을 줌**
-- **IPTW로 유의한 결과가 나오더라도**, covariate balance가 확보되지 않았다면 신뢰 어려움  
-  → 반드시 사후 진단 필요
+- **Propensity Score(PS)** 는 교란(confounding)을 제거하지 않음  
+  → 단지 처치 확률을 요약한 수단일 뿐
+
+- PS 기반 분석 후에도 **공변량 균형(balance) 진단 필수**
+  - 주요 진단법:  
+    - `SMD plot` (Standardized Mean Difference)  
+    - `Overlap plot` (PS 분포 겹침 확인)  
+    - `Love plot` (보정 전후 비교)
+
+- **분석 설정값(caliper, trimming, matching ratio, stabilized weight)** 은 결과에 중대한 영향
+  - caliper 좁으면 bias ↓, 표본 손실 ↑  
+  - stabilized weight 사용 시 분산 안정화 가능
+
+- **PSM은 matched pair 비교이므로**, outcome 분석 시 **GEE** 등 상관구조를 고려한 모델이 필요할 수 있음  
+  → 특히 반복 측정 데이터나 군집 구조가 있을 경우 더욱 중요
+
+- **IPTW에서 유의한 결과가 나와도**, 공변량 균형이 확보되지 않으면 해석 불가능  
+  → 반드시 사후 진단 동반 필요
+
+- **Sensitivity analysis**를 통해 **미측정 교란(unmeasured confounding)에 대한 강건성 평가** 필요
+  - 예: `E-value`, `Rosenbaum bounds` 등
+
+> 결과 해석의 신뢰도는 단순 통계적 유의성보다, **모델의 적절성과 사후 검증의 충실도**에 달려 있음
 
 ---
 
